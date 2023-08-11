@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Breakfast Menu</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #2b2b2b;
+      color: #fff;
+    }
+    
+    h1 {
+      text-align: center;
+      margin: 30px 0;
+      color: #fff;
+      font-size: 36px;
+      text-transform: uppercase;
+    }
+    
+    .menu-item {
+      max-width: 400px;
+      margin: 0 auto;
+      background-color: #171717;
+      border-radius: 5px;
+      padding: 20px;
+      margin-bottom: 30px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+    }
+    
+    .menu-item img {
+      display: block;
+      margin: 0 auto;
+      height: 200px;
+      width: 200px;
+      border-radius: 50%;
+    }
+    
+    .menu-item h2 {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 24px;
+      color: #fff;
+      text-transform: uppercase;
+    }
+    
+    .menu-item p {
+      text-align: justify;
+      margin-top: 10px;
+      color: #ccc;
+    }
+    
+    .price {
+      text-align: center;
+      font-weight: bold;
+      color: #cc0000;
+      margin-top: 15px;
+      font-size: 20px;
+    }
+
+    .add-to-cart-button {
+      display: block;
+      margin: 10px auto;
+      padding: 10px 20px;
+      background-color: #cc0000;
+      color: #fff;
+      text-align: center;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .save-button {
+      display: block;
+      margin: 20px auto;
+      padding: 10px 20px;
+      background-color: #cc0000;
+      color: #fff;
+      text-align: center;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .saved-items {
+      max-width: 400px;
+      margin: 0 auto;
+      background-color: #171717;
+      border-radius: 5px;
+      padding: 20px;
+      margin-top: 30px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+    }
+
+    .saved-items h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 24px;
+      color: #fff;
+      text-transform: uppercase;
+    }
+
+    .saved-items ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .saved-items li {
+      margin-bottom: 10px;
+      color: #ccc;
+    }
+
+    .back-to-home {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      text-decoration: none;
+      color: #fff;
+      font-weight: bold;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Breakfast Menu</h1>
+  <a href="index.html" class="back-to-home">Back to Home</a>
+  
+
+  <div class="menu-item">
+    <img src="assets/images/eggs-Benedict.jpg" alt="Dish 1">
+    <h2>Eggs Benedict</h2>
+    <p>A classic dish consisting of poached eggs, Canadian bacon, and hollandaise sauce served on a toasted English muffin.</p>
+    <p class="price">₹500</p>
+    <button class="add-to-cart-button" onclick="addToCart('Eggs Benedict', 500)">Add to Cart</button>
+  </div>
+
+  <div class="menu-item">
+    <img src="assets/images/California-Avocado.jpeg" alt="Dish 2">
+    <h2>Avocado Toast</h2>
+    <p>Toasted bread topped with mashed avocado, usually seasoned with salt, pepper, and various toppings such as tomatoes, radishes, or feta cheese.</p>
+    <p class="price">₹1500</p>
+    <button class="add-to-cart-button" onclick="addToCart('Avocado Toast', 1500)">Add to Cart</button>
+  </div>
+
+  <div class="menu-item">
+    <img src="assets/images/belgian-waffles.jpg" alt="Dish 3">
+    <h2>Belgian Waffles</h2>
+    <p>Light and fluffy waffles made with a yeast batter, served with butter, syrup, and often accompanied by fresh fruits or whipped cream.</p>
+    <p class="price">₹300</p>
+    <button class="add-to-cart-button" onclick="addToCart('Belgian Waffles', 300)">Add to Cart</button>
+  </div>
+
+  <div class="menu-item">
+    <img src="assets/images/Caprese-Croissant.jpg" alt="Dish 4">
+    <h2>Croissant Sandwich</h2>
+    <p>A buttery and flaky croissant filled with ingredients like ham, cheese, and lettuce, often accompanied by a side of fresh fruits or a cup of coffee.</p>
+    <p class="price">₹700</p>
+    <button class="add-to-cart-button" onclick="addToCart('Croissant Sandwich', 700)">Add to Cart</button>
+  </div>
+
+  <div class="menu-item">
+    <img src="assets/images/burritos.jpg" alt="Dish 5">
+    <h2>Breakfast Burrito</h2>
+    <p>A large tortilla filled with scrambled eggs, cheese, sausage or bacon, and various toppings such as salsa, avocado, or sour cream.</p>
+    <p class="price">₹2000</p>
+    <button class="add-to-cart-button" onclick="addToCart('Breakfast Burrito', 2000)">Add to Cart</button>
+  </div>
+
+  <div class="menu-item">
+    <img src="assets/images/Smoked_Salmon.jpg" alt="Dish 6">
+    <h2>Smoked Salmon Bagel</h2>
+    <p>A toasted bagel topped with cream cheese, smoked salmon, red onions, capers, and sometimes accompanied by sliced tomatoes or cucumbers.</p>
+    <p class="price">₹2200</p>
+    <button class="add-to-cart-button" onclick="addToCart('Smoked Salmon Bagel', 2200)">Add to Cart</button>
+  </div>
+
+  <button class="save-button" onclick="saveCart()">Save Cart</button>
+
+  <div class="saved-items">
+    <h2>Saved Cart Items</h2>
+    <ul id="savedItemsList"></ul>
+  </div>
+
+  <script>
+    var cartItems = [];
+
+    function addToCart(itemName, itemPrice) {
+      cartItems.push({
+        name: itemName,
+        price: itemPrice
+      });
+      alert(itemName + " added to cart!");
+    }
+
+    function saveCart() {
+      
+      console.log("Cart saved successfully!");
+      alert("Cart saved successfully!");
+
+      
+      var savedItemsList = document.getElementById("savedItemsList");
+      savedItemsList.innerHTML = ""; 
+
+      for (var i = 0; i < cartItems.length; i++) {
+        var listItem = document.createElement("li");
+        listItem.textContent = cartItems[i].name + " - " +  "₹" + cartItems[i].price ;
+        savedItemsList.appendChild(listItem);
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Drinks Menu</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #2b2b2b;
+      color: #fff;
+    }
+    
+    h1 {
+      text-align: center;
+      margin: 30px 0;
+      color: #fff;
+      font-size: 36px;
+      text-transform: uppercase;
+    }
+    
+    .menu-item {
+      max-width: 400px;
+      margin: 0 auto;
+      background-color: #171717;
+      border-radius: 5px;
+      padding: 20px;
+      margin-bottom: 30px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+    }
+    
+    .menu-item img {
+      display: block;
+      margin: 0 auto;
+      height: 200px;
+      width: 200px;
+      border-radius: 50%;
+    }
+    
+    .menu-item h2 {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 24px;
+      color: #fff;
+      text-transform: uppercase;
+    }
+    
+    .menu-item p {
+      text-align: justify;
+      margin-top: 10px;
+      color: #ccc;
+    }
+    
+    .price {
+      text-align: center;
+      font-weight: bold;
+      color: #cc0000;
+      margin-top: 15px;
+      font-size: 20px;
+    }
+
+    .add-to-cart-button {
+      display: block;
+      margin: 10px auto;
+      padding: 10px 20px;
+      background-color: #cc0000;
+      color: #fff;
+      text-align: center;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .save-button {
+      display: block;
+      margin: 20px auto;
+      padding: 10px 20px;
+      background-color: #cc0000;
+      color: #fff;
+      text-align: center;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .saved-items {
+      max-width: 400px;
+      margin: 0 auto;
+      background-color: #171717;
+      border-radius: 5px;
+      padding: 20px;
+      margin-top: 30px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+    }
+
+    .saved-items h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 24px;
+      color: #fff;
+      text-transform: uppercase;
+    }
+
+    .saved-items ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .saved-items li {
+      margin-bottom: 10px;
+      color: #ccc;
+    }
+
+    .back-to-home {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      text-decoration: none;
+      color: #fff;
+      font-weight: bold;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+    <a href="index.html" class="back-to-home">Back to Home</a>
+  <h1>Drinks Menu</h1>
+  
+
+  <div class="menu-item">
+    <img src="assets/images/margarita.jpg" alt="Dish 1">
+    <h2>Margarita</h2>
+    <p>The Margarita is a classic and refreshing cocktail made with tequila, lime juice, and orange liqueur. It can be served on the rocks or blended with ice.</p>
+    <p class="price">₹99</p>
+    <button class="add-to-cart-button" onclick="addToCart('Margarita', 99)">Add to Cart</button>
+  </div>
+
+  <div class="menu-item">
+    <img src="assets/images/pina.jpg" alt="Dish 2">
+    <h2>Piña Colada</h2>
+    <p>The Piña Colada is a tropical cocktail that combines the flavors of rum, pineapple juice, and creamy coconut. It's a popular choice for beachside relaxation.</p>
+    <p class="price">₹1155</p>
+    <button class="add-to-cart-button" onclick="addToCart('Piña Colada', 1155)">Add to Cart</button>
+  </div>
+
+  <div class="menu-item">
+    <img src="assets/images/Black-Mojito.jpg" alt="Dish 3">
+    <h2>Mojito</h2>
+    <p>The Mojito is a refreshing cocktail that originated in Cuba. It combines the flavors of rum, lime, mint, and sweetness.</p>
+    <p class="price">₹225</p>
+    <button class="add-to-cart-button" onclick="addToCart('Mojito', 225)">Add to Cart</button>
+  </div>
+
+  <div class="menu-item">
+    <img src="assets/images/Espresso.jpg" alt="Dish 4">
+    <h2>Espresso Martini</h2>
+    <p>The Espresso Martini is a cocktail that combines the rich flavors of vodka, coffee liqueur, and freshly brewed espresso. It's a perfect choice for coffee lovers looking for a spirited twist.</p>
+    <p class="price">₹395</p>
+    <button class="add-to-cart-button" onclick="addToCart('Espresso Martini', 395)">Add to Cart</button>
+  </div>
+
+  <div class="menu-item">
+    <img src="assets/images/aperol-spritz-1.jpg" alt="Dish 5">
+    <h2>Aperol Spritz</h2>
+    <p>The Aperol Spritz is a popular Italian aperitif that is light, citrusy, and slightly bitter. It's a refreshing drink to enjoy before a meal.</p>
+    <p class="price">₹1495</p>
+    <button class="add-to-cart-button" onclick="addToCart('Aperol Spritz', 1495)">Add to Cart</button>
+  </div>
+
+  <div class="menu-item">
+    <img src="assets/images/sazerac.jpg" alt="Dish 6">
+    <h2>Sazerac</h2>
+    <p>The Sazerac is a classic New Orleans cocktail known for its strong and flavorful combination of rye whiskey, bitters, and a touch of absinthe.</p>
+    <p class="price">₹4355</p>
+    <button class="add-to-cart-button" onclick="addToCart('Sazerac', 4355)">Add to Cart</button>
+  </div>
+
+  <button class="save-button" onclick="saveCart()">Save Cart</button>
+
+  <div class="saved-items">
+    <h2>Saved Cart Items</h2>
+    <ul id="savedItemsList"></ul>
+  </div>
+
+  <script>
+    var cartItems = [];
+
+    function addToCart(itemName, itemPrice) {
+      cartItems.push({
+        name: itemName,
+        price: itemPrice
+      });
+      alert(itemName + " added to cart!");
+    }
+
+    function saveCart() {
+      
+      console.log("Cart saved successfully!");
+      alert("Cart saved successfully!");
+
+      
+      var savedItemsList = document.getElementById("savedItemsList");
+      savedItemsList.innerHTML = ""; 
+
+      for (var i = 0; i < cartItems.length; i++) {
+        var listItem = document.createElement("li");
+        listItem.textContent = cartItems[i].name + " - " + "₹" + cartItems[i].price  ;
+        savedItemsList.appendChild(listItem);
+      }
+    }
+  </script>
+</body>
+</html>
